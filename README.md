@@ -8,9 +8,12 @@ There are 5000 training examples in *TrainingData.mat*, where each training exam
 The second part of the training set is a 5000-dimensional vector **y** that contains labels for the training set. To make things more compatible with MATLAB indexing, where there is no zero index, we have mapped the digit zero to the value ten. Therefore, a "0" digit is labeled as "10", while the digits "1" to "9" are labeled as "1" to "9" in their natural order.
 
 **Regularized Logistic Regression**
+
 ![Screenshot](regularized-logistic-regression.png)
 
 In the second part of the project, I have implemented a neural network to recognize handwritten digits using the same training set as before. The neural network will be able to represent complex models that form non-linear hypotheses. We will be using parameters from a neural network that we have already trained. Our goal is to implement the feedforward propagation algorithm to use our weights for prediction. 
 Our neural network is shown in the figure below. It has 3 layers - an input layer, a hidden layer and an output layer. Our inputs are pixel values of digit images. Since the images are of size 20×20, this gives us 400 input layer units (excluding the extra bias unit which always outputs +1). As before, the training data will be loaded into the variables **X** and **y**.
-![Screenshot](nueral-network-model.png)
+
+![Screenshot](nueral-network-model.PNG)
+
 We have a set of network parameters (Θ(1); Θ(2)) which are already trained. These are stored in *NNweights.mat* and will be loaded into **Theta1** and **Theta2**. The parameters have dimensions that are sized for a neural network with 25 units in the second layer and 10 output units (corresponding to the 10 digit classes).
