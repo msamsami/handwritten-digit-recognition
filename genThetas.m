@@ -7,7 +7,6 @@ function [all_theta] = genThetas(X, y, num_labels, lambda, numIterations)
     all_theta = zeros(num_labels, n + 1);
     X = [ones(m, 1) X];  % Adding ones to the X data matrix
 
-
     for i = 1:num_labels
         initial_theta = zeros(n + 1, 1);
         options = optimset('GradObj', 'on', 'MaxIter', numIterations);
