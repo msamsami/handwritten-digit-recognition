@@ -4,12 +4,11 @@ function numgrad = computeNumericalGradient(J, theta)
     %  theta. Calling y = J(theta) should return the function value at theta.  
 
     % The following code implements numerical gradient checking, and 
-    % returns the numerical gradient.It sets numgrad(i) to (a numerical 
+    % returns the numerical gradient. It sets numgrad(i) to (a numerical 
     % approximation of) the partial derivative of J with respect to the 
-    % i-th input argument, evaluated at theta. (i.e., numgrad(i) should 
+    % i-th input argument, evaluated at theta, i.e., numgrad(i) should 
     % be the (approximately) the partial derivative of J with respect 
-    % to theta(i).)
-
+    % to theta(i).
 
     numgrad = zeros(size(theta));
     perturb = zeros(size(theta));
