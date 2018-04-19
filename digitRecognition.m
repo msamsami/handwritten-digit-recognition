@@ -5,12 +5,13 @@ clear;
 %%%%%%%% PART1: Using Multi-class Logistic Regression
 
 input_layer_size  = 400;  % 20x20 Input Images of Digits
-num_labels = 10;  % 10 labels, from 1 to 10, we have mapped "0" to label "10")
+num_labels = 10;  % 10 labels, from 1 to 10 (we have mapped "0" to label "10")
 
 load('TrainingData.mat');  % Loading training data (they will be stored in arrays X, y)
 m = size(X, 1);  % Number of training examples
 
 fprintf('\nTesting: '); % First we test the program
+
 % Assigning the parameters to some values
 theta_t = [-2; -1; 1; 2];
 X_t = [ones(5, 1) reshape(1:15, 5, 3)/10];
@@ -31,8 +32,10 @@ fprintf(' 0.146561\n -0.548558\n 0.724722\n 1.398003\n');
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
 lambda = 0.1;  % Defining the value of lambda
-% Finding the all theta parameters for each class (the last parameter is
-% the number of iterations)
+
+% Finding the all theta parameters for each class (the last parameter of
+% genThetas, i.e., the one which equals to 50, defines the maximum number
+% of iterations
 [all_theta] = genThetas(X, y, num_labels, lambda, 50);  
 
 % Now we use our trained classifer to predict for all examples in data set
@@ -61,7 +64,7 @@ clear;
 
 input_layer_size  = 400;  % 20x20 Input Images of Digits
 hidden_layer_size = 25;   % 25 Hidden units
-num_labels = 10;  % 10 labels, from 1 to 10, we have mapped "0" to label "10")
+num_labels = 10;  % 10 labels, from 1 to 10 (we have mapped "0" to label "10")
 
 load('TrainingData.mat');  % Loading training data (they will be stored in arrays X, y)
 m = size(X, 1);  % Number of training examples
