@@ -152,7 +152,12 @@ Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
 Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
                  num_labels, (hidden_layer_size + 1));
                  
-% After training the neural network, we would like to use it to predict
-% the labels. This lets us compute the training set accuracy.
-pred = predict(Theta1, Theta2, X);
-fprintf('\nTraining Set Accuracy (Backpropagation Method): %f\n', mean(double(pred == y)) * 100);
+% Now that we have trained the neural network, we would like to use it 
+% to predict the digits (The input matrix can be any new matrix containing 
+% images of digits with size of 20x20 pixels)
+inputMatrix = X;
+pred3 = NNpredict(Theta1, Theta2, inputMatrix);
+
+% Finally, we find the accuracy of our classifier
+acc3 = mean(double(pred3 == y)) * 100;
+fprintf('\nTraining Set Accuracy (Backpropagation Method): %f\n', acc3);
