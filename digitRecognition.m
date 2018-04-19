@@ -72,9 +72,9 @@ m = size(X, 1);  % Number of training examples
 % Loading some pre-initialized neural network parameters.
 load('NNweights.mat');  % Weights will be loaded into variables Theta1 and Theta2
 
-% Now that we have trained the neural network, we would like to use it 
-% to predict the digits (The input matrix can be any new matrix containing 
-% images of digits with size of 20x20 pixels)
+% After training the neural network, we would like to use it to predict
+% the digits (The input matrix can be any new matrix containing images
+% of digits with size of 20x20 pixels)
 inputMatrix = X;
 pred2 = NNpredict(Theta1, Theta2, inputMatrix);
 
