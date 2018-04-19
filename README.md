@@ -18,12 +18,19 @@ Our neural network is shown in the figure below. It has 3 layers - an input laye
 
 ![Screenshot](nueral-network-model.PNG)
 
-We have a set of network parameters (Θ(1); Θ(2)) which are already trained. These are stored in *NNweights.mat* and will be loaded into **Theta1** and **Theta2**. The parameters have dimensions that are sized for a neural network with 25 units in the second layer and 10 output units (corresponding to the 10 digit classes).
+We have a set of network parameters (Θ(1), Θ(2)) which are already trained. These are stored in *NNweights.mat* and will be loaded into **Theta1** and **Theta2**. The parameters have dimensions that are sized for a neural network with 25 units in the second layer and 10 output units (corresponding to the 10 digit classes).
 
 **Backpropagation Algorithm for Neural Network Learning**
 
 In the third part of the project, I have implemented the backpropagation algorithm for a neural network and applied it to the task of hand-written digit recognition using the same training set as before.
 Our neural network is shown is as same as before. It has 3 layers - an input layer, a hidden layer and an output layer. As before, our inputs are pixel values 3of digit images. Since the images are of size 20×20, this gives us 400 input layer units (not counting the extra bias unit which always outputs +1). The training data will be loaded into the variables **X** and **y**.
-We have a set of network parameters (Θ(1); Θ(2)) which are already trained. These are stored in *NNweights.mat* and will be loaded into **Theta1** and **Theta2**. The parameters have dimensions that are sized for a neural network with 25 units in the second layer and 10 output units (corresponding to the 10 digit classes).
+We have a set of network parameters (Θ(1), Θ(2)) which are already trained. These are stored in *NNweights.mat* and will be loaded into **Theta1** and **Theta2**. The parameters have dimensions that are sized for a neural network with 25 units in the second layer and 10 output units (corresponding to the 10 digit classes).
 
-![Screenshot](back-propagation1.PNG)
+![Screenshot](back-propagation1.png)
+
+The intuition behind the backpropagation algorithm is as follows. Given a training example (x(t), y(t)), we will first run a "forward pass" to compute all the activations throughout the network, including the output value of the hypothesis *hΘ(x)*. Then, for each node in layer *l*, we would like to compute an "error term" *δ(l)* that measures how much that node was "responsible" for any errors in our output.
+For an output node, we can directly measure the difference between the network’s activation and the true target value, and use that to define *δj(3)* (since layer 3 is the output layer). For the hidden units, you will compute *δ(l)* based on a weighted average of the error terms of the nodes in layer *(l+1)*.
+
+![Screenshot](back-propagation2.PNG)
+
+In detail, here is the backpropagation algorithm (also depicted in the Figure). We should implement steps 1 to 4 in a loop that processes one example at a time. Concretely, we should implement a for-loop **for t = 1:m** and place steps 1-4 below inside the for-loop, with the *t-th* iteration performing the calculation on the *t-th* training example (x(t), y(t)). Step 5 will divide the accumulated gradients by m, and add the regularization term to obtain the gradients for the neural network cost function.
