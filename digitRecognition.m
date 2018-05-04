@@ -127,10 +127,10 @@ debug_J  = nnCostFunction(nn_params, input_layer_size, ...
            
            
 % We have now implemented all the code necessary to train a neural 
-%  network. To train your neural network, we will now use "fmincg", which
-%  is a function which works similarly to "fminunc". These advanced optimizers
-%  are able to train our cost functions efficiently as long as we provide
-%  them with the gradient computations.
+% network. To train your neural network, we will now use "fmincg", which
+% is a function which works similarly to "fminunc". These advanced optimizers
+% are able to train our cost functions efficiently as long as we provide
+% them with the gradient computations.
 
 options = optimset('MaxIter', 75);  % Maximum number of iterations
 
