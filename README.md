@@ -1,5 +1,4 @@
-# handwritten-digit-recognition-system
-Handwritten Digit Recognition System
+# Handwritten Digit Recognition using MLP
 
 In this project, I have implemented one-vs-all logistic regression and neural networks (feedforward propagation and backpropagation) to recognize hand-written digits (from 0 to 9). Automated handwritten digit recognition is widely used today - from recognizing zip codes (postal codes) on mail envelopes to recognizing amounts written on bank checks.
 
